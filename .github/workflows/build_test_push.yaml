@@ -3,8 +3,12 @@ name: build test push pytorch gpu singularity container
 on: 
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
   pull_request:  
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
   
 jobs:
   build_test_push:
@@ -24,4 +28,3 @@ jobs:
         run: |
           echo "${{secrets.SINGULARITY_TOKEN}}" | singularity remote login
           make push
-          
