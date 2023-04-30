@@ -24,6 +24,7 @@ test:
 	#singularity exec test.sif python -c "import cv2; print('Opencv version: ' + cv2.__version__)"
 
 push:
+	# https://cloud.sylabs.io/library
 	# singularity remote login
 	echo singularity push -U test.sif library://luhappycoder/deep-learning/pytorch_gpu:$(PYTORCH_VERSION)
 	singularity push -U test.sif library://luhappycoder/deep-learning/pytorch_gpu:$(PYTORCH_VERSION)
