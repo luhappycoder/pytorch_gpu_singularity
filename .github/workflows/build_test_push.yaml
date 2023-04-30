@@ -1,0 +1,27 @@
+name: build test push pytorch gpu singularity container
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:  
+    branches: [ main ]
+  
+jobs:
+  build_test_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository content
+        uses: actions/checkout@v3 # Checkout the repository content to github runner.
+      - name: install singularity
+        run: |
+          bash install_singularity.sh
+          singularity --version
+      - name: build container
+        run: make build
+      - name: test container
+        run: make test
+      - name: push container to https://cloud.sylabs.io/library
+        run: |
+          echo "${{secrets.SINGULARITY_TOKEN}}" | singularity remote login
+          make push
+          
