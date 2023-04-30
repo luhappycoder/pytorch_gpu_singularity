@@ -62,3 +62,17 @@ After finishing your work, type
 exit
 ```
 to exit the container.
+
+## 2. run singularity container command directly
+
+```bash
+singularity exec --nv pytorch_gpu.sif python /path/to/<your_script.py>
+```
+
+#### Note: `/path/to/` can be a relative path or absolute path of your home or bind path.
+
+- Singularity will bind your host's $HOME to container's $HOME automatically. That's mean, if you do modification on your host's home directory, you can see the modifications in the container's home directory, and vice versa.
+
+- If current working directory is in your home directory or bind path, singularity will replicate your current working directory within the container. 
+
+    
