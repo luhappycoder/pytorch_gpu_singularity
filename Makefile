@@ -26,5 +26,4 @@ test:
 push:
 	# https://cloud.sylabs.io/library
 	# singularity remote login
-	echo singularity push -U test.sif library://luhappycoder/deep-learning/pytorch_gpu:$(PYTORCH_VERSION)
 	singularity push -U test.sif library://luhappycoder/deep-learning/pytorch_gpu:$(PYTORCH_VERSION)
