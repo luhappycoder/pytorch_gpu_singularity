@@ -14,7 +14,7 @@
     
 ## Pre-requisite
 
-- Your host system must has an NVIDIA GPU card and driver installed(don't need to install cuda and cudnn)
+- Your host system must have an NVIDIA GPU card and driver installed(don't need to install Cuda and Cudnn)
 
 - Install singularity on your host
 
@@ -34,15 +34,15 @@
 ### 1. Enter into singularity container, run command in the container
 
 ```bash
-# enter into singularityh container: imagine it as SSH into (passwordless) another machine
-# --nv: leverage the nvidia gpu card
+# enter into singularity container: imagine it as SSH into (passwordless) another machine
+# --nv: leverage the Nvidia GPU card
 singularity shell --nv pytorch_gpu.sif
 ```
 
 You will get:
 
 ```bash
-Singularity: Invoking an interactive shell within container...
+Singularity: Invoking an interactive shell within a container...
 
 Singularity pytorch_gpu.sif:~>
 ```
